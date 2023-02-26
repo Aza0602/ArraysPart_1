@@ -1,7 +1,10 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
     private static void task1() {
@@ -67,4 +70,40 @@ public class Main {
         System.out.print(numbers[5] + ", ");
         System.out.println(numbers[6]);
     }
+
+    private static void task3() {
+        System.out.println("Задача 3");
+
+        System.out.println("Вариант 1");
+        int[] digits = {1, 2, 3};
+
+        for (int i = 0; i < digits.length / 2; i++) {
+            int temp = digits[i];
+            digits[i] = digits[digits.length -1 - i];
+            digits[digits.length -1 - i] = temp;
+        }
+        System.out.println(Arrays.toString(digits));
+
+        System.out.println("Вариант 2");
+        float[] fractionalNumbers = {1.57f, 7.654f, 9.986f};
+
+        for (float j = 0; j < fractionalNumbers.length / 2f; j++) {
+            float temp = fractionalNumbers[(int) j];
+            fractionalNumbers[(int) j] = fractionalNumbers[(int) (fractionalNumbers.length -1 - j)];
+            fractionalNumbers[(int) (fractionalNumbers.length - 1 - j)] = temp;
+        }
+        System.out.println(Arrays.toString(fractionalNumbers));
+
+        System.out.println("Вариант 3");
+        int[] numbers = {5, 2, 12, 52, 63, 54, 85};
+
+        for (int i = 0; i < numbers.length / 2; i++) {
+            int temp = numbers[i];
+            numbers[i] = numbers[numbers.length -1 - i];
+            numbers[numbers.length -1 - i] = temp;
+        }
+        System.out.println(Arrays.toString(numbers));
+
+    }
 }
+
